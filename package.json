@@ -1,6 +1,6 @@
 {
   "name": "object-identity-map",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Map implementation based on object identity",
   "author": "Stephen Belanger <admin@stephenbelanger.com>",
   "main": "index.js",
