@@ -14,7 +14,7 @@ function rebuildAsOrdered (source) {
 
   if (Array.isArray(source)) {
     target = []
-  } else if (typeof source === 'object') {
+  } else if (source && typeof source === 'object') {
     target = {}
   } else {
     return source
