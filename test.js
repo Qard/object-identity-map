@@ -83,3 +83,16 @@ tap.test('properly matches nested objects', t => {
   t.equal(a, c)
   t.end()
 })
+
+tap.test('handles null and undefined correctly', t => {
+  const counters = new ObjectIdentityMap()
+
+  const before = counters.has({ foo: null })
+  counters.set({ foo: null, bar: undefined }, 1)
+  const after = counters.has({ foo: null })
+  t.notEqual(before, after)
+  t.equal(counters.get({ foo: null }), 1)
+  counters.delete({ foo: null })
+  t.notOk(counters.has({ foo: null }))
+  t.end()
+})
