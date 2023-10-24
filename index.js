@@ -1,5 +1,3 @@
-const entries = require('object.entries')
-
 function sortEntriesByKey ([ a ], [ b ]) {
   return a > b ? 1 : -1
 }
@@ -20,7 +18,7 @@ function rebuildAsOrdered (source) {
     return source
   }
 
-  return entries(source)
+  return Object.entries(source)
     .sort(sortEntriesByKey)
     .reduce(rebuildReducer, target)
 }
